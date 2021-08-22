@@ -1,24 +1,26 @@
-enc_flag = bytearray(bytes([0x0C, 0x46, 0x9F, 0x4B, 0x77, 0xC9, 0x62, 0xBB, 0x42, 0x0D, 0x0DD, 0x0A1, 0x0D3, 0x22, 0x33, 0x6C, 0x83, 0x89, 0x4A, 0x0E2, 0x7D, 0x0C9, 0x6, 0x39, 0x34, 0x22, 0x82, 0x61, 0x54, 0x3B, 0x47, 0x0D8, 0x0F7, 0x5C, 0x30, 0x21, 0x2, 0x0AA, 0x62, 0x89, 0x0A, 0x4E, 0x6F, 0x0CF, 0x62]))
-# RC4
-def sub_402808():
-	v3 = [i for i in range(256)]
-	v5 = 0
-	s = b'socket'
-	for j in range(256):
-		v5 = (v3[j] + v5 + s[j%len(s)]) % 256
-		v3[j], v3[v5] = v3[v5], v3[j]
-	return v3
+def inverse_Fp(a, p):
+	u = a
+	v = p
+	x1, x2 = 1, 0
+	while(u != 1):
+		q = v // u
+		r = v - q*u
+		x = x2-q*x1
 
-def enc(v3, input):
-	Str = bytearray(45)
-	v7 = 0
-	v6 = 0
-	for i in range(len(input)):
-		v7 = (v7 + 1) % 256
-		v6 = (v3[v7] + v6) % 256
-		v3[v7], v3[v6] = v3[v6], v3[v7]
-		Str[i] = v3[((v3[v7] + v3[v6]) % 256)] ^ input[i]
-	return Str
+		v = u
+		u = r
+		x2 = x1
+		x1 = x
+	return x1%p
 
-v3 = sub_402808()
-print(enc(v3, enc_flag))
+
+
+# 7, 3
+p = b'ITISNICETODAY'
+for pi in p:
+	print(chr(((7 * (pi - ord('A')) +3) % 26) + ord('A')), end = '')
+C = b'HGHZQHRFGXYDP'
+print()
+for ci in C:
+	print(chr(((15 * ((ci - ord('A')) -3) % 26)) + ord('A')), end = '')
+print()
