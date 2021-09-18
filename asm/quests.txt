@@ -1,0 +1,47 @@
+rev-01: Viết chương trình bằng ngôn ngữ ASM, 
+cho phép người dùng nhập vào một chuỗi và in ra màn hình 
+(chỉ dùng syscall, không được extend thư viện từ libc).
+Platform: Linux
+
+rev-02: Viết chương trình bằng ngôn ngữ ASM, 
+cho phép người dùng nhập vào một chuỗi và in ra màn hình chuỗi in hoa 
+(chỉ dùng syscall, không được extend thư viện từ libc).
+Platform: Linux
+
+rev-03: Viết chương trình bằng ngôn ngữ ASM, 
+cho phép người dùng nhập vào một chuỗi và in ra màn hình độ dài của chuỗi đó 
+(chỉ dùng syscall, không được extend thư viện từ libc).
+Platform: Linux
+
+rev-04: Viết chương trình bằng ngôn ngữ ASM, 
+cho phép người dùng nhập vào một chuỗi và in ra màn hình chuỗi ngược 
+(chỉ dùng syscall, không được extend thư viện từ libc).
+Platform: Linux
+
+rev-05: Viết chương trình bằng ngôn ngữ ASM, 
+cho phép người dùng nhập vào một chuỗi và in ra màn hình 
+(được sử dụng các hàm từ thư viện windows).
+Platform: Windows
+
+rev-06: Viết chương trình bằng ngôn ngữ ASM, 
+cho phép người dùng nhập vào một mảng Interger và 
+in ra màn hình giá trị lớn nhất trong mảng 
+(được sử dụng các hàm từ thư viện windows, 
+các chức năng phải được build thành các hàm).
+Platform: Windows
+
+rev-07: Viết chương trình bằng ngôn ngữ ASM, 
+có chức năng đọc 1 file và mã hóa file đó bằng thuật toán XOR . 
+Hàm mã hóa xây dựng với 2 đầu vào là key và chuỗi cần mã hóa 
+(được sử dụng các hàm từ thư viện windows, 
+các chức năng phải được build thành các hàm).
+Platform: Windows
+
+rev-08: Tham khảo thuật toán mã hóa RC4 và viết chương trình mã hóa bằng thuật toán đó 
+bằng ngôn ngữ ASM 
+(được sử dụng các hàm từ thư viện, các chức năng phải được build thành các hàm).
+Platform: Windows or Linux
+
+vmcode.exe
+There are thousands of clouds in the sky. I have placed magical clouds that lead you to heaven. Find them and come see WOWY!
+Format flag: kcsctraining{something}
