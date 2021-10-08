@@ -1,16 +1,12 @@
 [link(github.com)](https://github.com/DownUnderCTF/Challenges_2021_Public/blob/main/pwn/oversight/WRITEUP.md)
 
-> Arch:     amd64-64-little
->
-> RELRO:    Partial RELRO
->
-> Stack:    No canary found
->
-> NX:       NX enabled
->
+> Arch:     amd64-64-little\
+> RELRO:    Partial RELRO\
+> Stack:    No canary found\
+> NX:       NX enabled\
 > PIE:      PIE enabled
-
-`leave` is short for `mov rsp, rbp` and `pop rbp` . So if we write a null byte in the lowest byte of `rbp` of `echo` function (function write in `echo_inner` function, but actually we write into stack (array v2) of `echo`  function)
+> 
+`leave` is short for `mov rsp, rbp` and `pop rbp` . So if we write a null byte in the lowest byte of `rbp` of `echo` function (write function in `echo_inner` function, but actually we write into stack (array v2) of `echo`  function)
 
 ```c
 echo(unsigned int a1)
